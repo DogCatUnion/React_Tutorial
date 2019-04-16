@@ -83,7 +83,7 @@ class App extends Component {
         </TableHead>
 
          <TableBody>
-           {customers.map(c =>{ return( <Customer id={c.id} image={c.image} name={c.name} gender={c.gender} birthday={c.birthday} job={c.job} />);})}
+           {customers.map(c =>{ return( <Customer key = {c.id} id={c.id} image={c.image} name={c.name} gender={c.gender} birthday={c.birthday} job={c.job} />);})}
          </TableBody>
        </Table>
        
