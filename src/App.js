@@ -31,6 +31,11 @@ const styles = theme=>({
 
 )
 
+/* const는 상수 변수를 만드는 명령어다. 밑에서 재선언, 재정의가 불가능하며 안에 value로 문자,문자열,객체 등 다 받을 수 있다 
+   또한 []로 감싸면 배열로 사용할 수도 있다. 
+
+  */
+
 const customers = [
   {
     'id' : 1,
@@ -64,11 +69,14 @@ const customers = [
 ]
 
 
-class App extends Component {
 
+class App extends Component {
+  
   render() {
+    /* Q. const 변수명으로 {} 쓴건 무슨의미지? */
     const {classes} = this.props;
      return ( 
+
        <Paper className ={classes.root}>
        <Table className ={classes.table} >
         <TableHead>
@@ -83,7 +91,7 @@ class App extends Component {
         </TableHead>
 
          <TableBody>
-           {customers.map(c =>{ return( <Customer id={c.id} image={c.image} name={c.name} gender={c.gender} birthday={c.birthday} job={c.job} />);})}
+           {customers.map(c =>{ return( <Customer key={c.id} id={c.id} image={c.image} name={c.name} gender={c.gender} birthday={c.birthday} job={c.job} />);})}
          </TableBody>
        </Table>
        
@@ -91,5 +99,7 @@ class App extends Component {
     );
   }
 }
+
+
 
 export default withStyles(styles)(App);
